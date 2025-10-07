@@ -70,6 +70,7 @@ $RECYCLE.BIN/
 *.sql
 *.sqlite
 *.sqlite3
+*.db 
 
 
 ############################
@@ -84,6 +85,7 @@ public/uploads/*
 !public/uploads/.gitkeep
 .tsbuildinfo
 .eslintcache
+secrets.txt
 
 ############################
 # Node.js
@@ -129,3 +131,4 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+.cache/
