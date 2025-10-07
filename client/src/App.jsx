@@ -10,6 +10,8 @@ import Account from "./pages/Account";
 import Admin from "./pages/Admin";
 import Books from "./pages/Books";
 import Isdarat from "./pages/Isdarat";
+import './index.css';
+
 
 function App() {
   return (

@@ -1,77 +1,146 @@
-/* Books.css - Create this file in the same folder as Books.jsx */
+.books-page {
+  text-align: center;
+  padding: 2rem;
+  direction: rtl;
+  font-family: "El Messiri", sans-serif;
+  color: #699691;
+}
 
-/* Books specific grid - override global styles */
-.books-grid {
+.books-title {
+  font-size: 2.5rem;
+  color: #699691;
+  margin-bottom: 3rem;
+}
+
+/* ✅ Triangle layout for 3 images */
+.book-filters {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
 }
 
-@media (min-width: 640px) {
-  .books-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Center the bottom (youth) image */
+.book-filters .filter-image-container:nth-child(3) {
+  grid-column: 1 / span 2;
+  justify-self: center;
 }
 
-@media (min-width: 1024px) {
-  .books-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.filter-image-container {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 0.5rem;
 }
 
-@media (min-width: 1280px) {
-  .books-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+/* ✅ Larger and cleaner images */
+.filter-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+  background: radial-gradient(circle, rgba(240, 252, 250, 0.9), transparent);
 }
 
-/* Books card - override global card styles */
+/* Label under image */
+.filter-label {
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  color: #4c837c;
+  font-weight: 600;
+}
+
+/* Hover and active states */
+.filter-image-container:hover .filter-image {
+  transform: scale(1.06);
+  border-color: #72a79d;
+}
+
+.filter-image-container.active .filter-image {
+  border-color: #048487;
+  box-shadow: 0 0 25px rgba(4, 132, 135, 0.35);
+}
+
+/* ✅ "All Books" button centered below */
+.all-books-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.filter-button {
+  background: #accfcb;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background: #048487;
+}
+
+/* ✅ Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
 .books-card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: #ffffffd5;
+  border: 1px solid #accfcb;
+  border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
-  padding: 0; /* Override global card padding */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .books-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  scale: 1.02;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .books-card img {
   width: 100%;
-  height: 12rem; /* 192px - smaller than before */
+  height: 14rem;
   object-fit: cover;
 }
 
 .books-card-content {
-  padding: 0.75rem;
-  text-align: center;
+  padding: 1rem;
 }
 
 .books-card-title {
-  font-size: 0.875rem; /* 14px */
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.3;
+  color: #699691;
+  margin-bottom: 0.3rem;
 }
 
 .books-card-price {
-  color: #059669;
+  color: #048487;
   font-weight: 700;
-  font-size: 0.875rem;
-  margin-bottom: 0.25rem;
+  font-size: 1rem;
 }
 
 .books-card-category {
-  color: #6b7280;
-  font-size: 0.75rem;
+  color: #72a79d;
+  font-size: 0.9rem;
+}
+
+.no-books {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  padding: 2rem;
 }

@@ -1,57 +1,73 @@
-.team-page {
+.about-page {
+  direction: rtl;
+  text-align: right;
   padding: 2rem;
-  direction: rtl; /* للغة العربية */
-  text-align: center;
+  font-family: 'El Messiri', sans-serif;
+  color: #0b8280;
+  background-color: transparent;
 }
 
-.about-section {
+/* Main page title */
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #0b8280;
   margin-bottom: 2rem;
 }
 
-.intro-section p,
-.about-section p {
-  font-size: 1.8rem; /* Adjust this value to make text bigger */
+/* Paragraph block */
+.text-block {
+  margin-bottom: 2.5rem;
+   text-align: center;
+  padding: 1.5rem;
+  font-size: 2.5rem;
+  background: transparent;
+  border-radius: 12px;
   line-height: 1.8;
+  color: #0b8280;
 }
-
-.achievements ul {
-  list-style: none;
-  padding: 0;
+/* Make text inside paragraphs bigger and stronger */
+.text-block p {
+  font-size: 2rem !important; /* ✅ force override */
   line-height: 2;
+  color: #626262;
 }
 
-.achievements li {
-  background: #f5f5f5;
-  margin: 0.5rem 0;
-  padding: 0.8rem;
-  border-radius: 8px;
-  font-size: 1rem;
+/* Heading inside text block */
+.text-block h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  text-align: center;
+  color: #0b8280;
 }
 
-.team-structure {
-  margin-top: 2rem;
+/* Gradient border above & below heading */
+.bordered-heading::before,
+.bordered-heading::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 70%;
+  margin: 1rem auto;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right,
+    rgba(172, 207, 203, 0),   /* transparent edges */
+    rgba(172, 207, 203, 1),   /* strong center */
+    rgba(172, 207, 203, 0)    /* transparent edges */
+  );
 }
 
-.team-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
+/* Links styling */
+.link {
+  color: #699691;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed #accfcb;
 }
 
-.team-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
-  min-width: 200px;
-  max-width: 250px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.team-card:hover {
-  transform: translateY(-5px);
-  border-color: #007bff;
+.link:hover {
+  color: #accfcb;
+  border-bottom: 1px solid #accfcb;
 }

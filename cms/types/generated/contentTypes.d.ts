@@ -401,6 +401,13 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
+    Target: Schema.Attribute.Enumeration<
+      [
+        '\u0644\u0644\u0623\u0637\u0641\u0627\u0644',
+        '\u0644\u0644\u0643\u0628\u0627\u0631',
+        '\u0644\u0644\u0634\u0628\u0627\u0628',
+      ]
+    >;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -439,6 +446,13 @@ export interface ApiTrainingTraining extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Location: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Target: Schema.Attribute.Enumeration<
+      [
+        '\u0644\u0644\u0643\u0628\u0627\u0631 ',
+        '\u0644\u0644\u0623\u0637\u0641\u0627\u0644',
+        '\u0644\u0644\u0634\u0628\u0627\u0628',
+      ]
+    >;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

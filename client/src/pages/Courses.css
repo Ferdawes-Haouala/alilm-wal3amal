@@ -1,118 +1,167 @@
-/* Courses.css - Similar to Books.css but adapted for courses */
+.courses-page {
+  text-align: center;
+  padding: 2rem;
+  direction: rtl;
+  font-family: "El Messiri", sans-serif;
+  color: #4c837c;
+}
 
-/* Courses specific grid - override global styles */
-.courses-grid {
+.courses-title {
+  font-size: 2.5rem;
+  color: #699691;
+  margin-bottom: 3rem;
+}
+
+/* ✅ Triangle Layout for course categories */
+.course-filters {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
 }
 
-@media (min-width: 640px) {
-  .courses-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.course-filters .filter-image-container:nth-child(3) {
+  grid-column: 1 / span 2;
+  justify-self: center;
 }
 
-@media (min-width: 1024px) {
-  .courses-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 for courses since they have more content */
-  }
+.filter-image-container {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 0.5rem;
 }
 
-@media (min-width: 1280px) {
-  .courses-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+/* ✅ Large Circle Images */
+.filter-image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+  background: radial-gradient(circle, rgba(240, 252, 250, 0.9), transparent);
 }
 
-/* Courses card - similar to books but taller for more content */
+.filter-label {
+  margin-top: 0.7rem;
+  font-size: 1.3rem;
+  color: #4c837c;
+  font-weight: 600;
+}
+
+.filter-image-container:hover .filter-image {
+  transform: scale(1.06);
+  border-color: #72a79d;
+}
+
+.filter-image-container.active .filter-image {
+  border-color: #048487;
+  box-shadow: 0 0 25px rgba(4, 132, 135, 0.35);
+}
+
+/* ✅ "All Courses" Button */
+.all-courses-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.filter-button {
+  background: #accfcb;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background: #048487;
+}
+
+/* ✅ Courses Grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
 .courses-card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: #ffffffd5;
+  border: 1px solid #accfcb;
+  border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .courses-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  scale: 1.02;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .courses-card img {
   width: 100%;
-  height: 10rem; /* 160px - smaller than books */
+  height: 14rem;
   object-fit: cover;
 }
 
 .courses-card-content {
   padding: 1rem;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .courses-card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.3;
-  color: #1f2937;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #699691;
+  margin-bottom: 0.3rem;
 }
 
 .courses-card-description {
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.4;
-  flex: 1;
-}
-
-.courses-card-details {
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #4c837c;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 
 .courses-card-details p {
-  color: #374151;
-  font-size: 0.75rem;
-  margin-bottom: 0.25rem;
-  text-align: right;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0;
 }
 
 .courses-card-category {
-  color: #2563eb;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
+  color: #72a79d;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 
 .courses-card-button {
-  background: linear-gradient(135deg, #2563eb, #059669);
+  display: inline-block;
+  background: #048487;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 0.875rem;
   font-weight: 600;
+  margin-top: 0.8rem;
   transition: all 0.3s ease;
-  margin-top: auto;
 }
 
 .courses-card-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: #036c6f;
+}
+
+.no-courses {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  padding: 2rem;
 }

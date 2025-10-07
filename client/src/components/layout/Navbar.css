@@ -1,95 +1,49 @@
-/* Navbar - more specific to override global styles */
+/* Navbar - layout */
 .navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
-  background: url("/background.png") center/cover no-repeat; 
-  /* 🔹 full-page bg */
-  width: 100%; /* Ensure navbar takes full width */
+  background-color: #e9f2ef; /* unified background */
+  width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
-/* Logo Container - adjusted to full width */
+/* Logo container */
 .logo-container {
   margin-bottom: 1.5rem;
-  width: 100%; /* Ensure it takes full width */
+  width: 100%;
   display: flex;
   align-items: center;
-  /* Remove justify-content: center if you want it aligned to one side */
 }
 
-/* Logo - now a full-width image with adjustable size options */
+/* Logo image */
 .logo-img {
-  /* Base settings 
-  width: 100%; /* Default: Stretch to full width of container 
-  height: auto; /* Default: Maintain aspect ratio 
-  object-fit: cover; /* Ensure the image covers the area 
-  */
-  /* Option 1: Fixed width and height (uncomment and adjust)
-  width: 800px;
-  height: 200px;
-  object-fit: cover;
-  */
-
-  /* Option 2: Max dimensions (uncomment and adjust)
-  max-width: 1200px;
-  max-height: 300px;
-  height: auto;
-  */
-
-  /* Option 3: Viewport units (uncomment and adjust) */
   width: 96vw;
   height: 25vw;
   object-fit: cover;
- 
-
-  /* Option 4: Percentage of container (uncomment and adjust)
-  width: 75%;
-  height: auto;
-  */
-
-  /* Object-fit and positioning */
-  object-position: center; /* Options: center, top, bottom, left, right, or percentages */
-
-  border-radius: 0; /* Remove circular styling */
-  /* Removed: padding, margin (add back if needed, e.g., margin: 10px) */
+  object-position: center;
+  border-radius: 0;
 }
 
-/* Links strip - with corner decorative images */
+/* Links container */
 .navbar .nav-links-container {
   width: 100%;
-  background: #e9f4f0; /* Your specified closer background color */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #e9f2ef; /* same as navbar */
+  box-shadow: none;
+  border: none;
   position: relative;
   overflow: hidden;
 }
 
-/* Top-left corner decoration */
-.navbar .nav-links-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150px; /* Adjust size as needed */
-  height: 80px; /* Adjust size as needed */
-  background: url('/corner-top-left.png') no-repeat;
-  background-size: contain;
-  z-index: 1;
-}
-
-/* Bottom-right corner decoration */
+/* Remove corner decorations */
+.navbar .nav-links-container::before,
 .navbar .nav-links-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 150px; /* Adjust size as needed */
-  height: 80px; /* Adjust size as needed */
-  background: url('/corner-bottom-right.png') no-repeat;
-  background-size: contain;
-  z-index: 1;
+  display: none;
 }
 
+/* Navbar links */
 .navbar .nav-links {
   display: flex;
   justify-content: center;
@@ -98,24 +52,25 @@
   margin: 0;
   padding: 1rem 0.8rem;
   position: relative;
-  z-index: 2; /* Ensure text appears above decorations */
+  z-index: 2;
 }
 
-/* Navbar links - highly specific to override global styles */
+/* Navbar link styles — clean */
 .navbar .nav-links-container .nav-links li a {
-  font-family: "Cairo", sans-serif;
+  font-family: "El Messiri", sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #609584 !important; /* Your specified text color with !important */
+  color: #609584 !important; /* normal color */
   text-decoration: none !important;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 0;
+  background: transparent !important;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover effect — only text color change */
 .navbar .nav-links-container .nav-links li a:hover {
-  background: rgba(115, 168, 148, 0.15) !important; /* Lighter hover effect */
-  color: #569c82 !important; /* Slightly darker shade on hover */
-  text-decoration: none !important;
+  background: transparent !important;
+  color: #048487 !important; /* ✅ new hover color */
   transform: translateY(-2px);
 }

@@ -178,3 +178,78 @@
     font-size: 0.95rem;
   }
 }
+.isdarat-container {
+  text-align: center;
+  padding: 3rem 1rem;
+  direction: rtl;
+  font-family: 'El Messiri', sans-serif;
+}
+
+.isdarat-title {
+  color: #699691;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.isdarat-subtitle {
+  color: #72a79d;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.isdarat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Each card */
+.isdarat-card {
+  background: #ffffffc9;
+  border: 2px solid #accfcb;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #699691;
+  text-decoration: none;
+}
+
+.isdarat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(172, 207, 203, 0.3);
+}
+
+/* ✅ The new image icons */
+.isdarat-icon-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.isdarat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #699691;
+  margin-bottom: 1rem;
+}
+
+.isdarat-card-description {
+  font-size: 1rem;
+  color: #72a79d;
+  margin-bottom: 1rem;
+}
+
+.isdarat-card-arrow {
+  font-size: 1.5rem;
+  color: #72a79d;
+}
+
+.isdarat-card-coming-soon {
+  font-size: 1rem;
+  color: #accfcb;
+  font-weight: 600;
+}
