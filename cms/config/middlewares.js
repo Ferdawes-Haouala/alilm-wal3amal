@@ -8,7 +8,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
+          'connect-src': ["'self'", 'https:', 'http:'],
           'img-src': [
             "'self'",
             'data:',
@@ -33,9 +33,13 @@ module.exports = [
     config: {
       enabled: true,
       origin: [
-        'https://lacglobal.up.railway.app',  // Votre frontend
-        'http://localhost:3000',                      // Dev local
-],
+        'http://localhost:5173',           // React dev server
+        'http://localhost:3000',           // optional if you use another port
+        'https://lacglobal.up.railway.app' // your deployed frontend
+      ],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      keepHeaderOnError: true,
       credentials: true,
     },
   },

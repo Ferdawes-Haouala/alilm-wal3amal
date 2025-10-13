@@ -1,15 +1,53 @@
 .contact-page {
-  padding: 2rem;
+  padding: 3rem 2rem;
   text-align: center;
-  direction: rtl; /* للغة العربية */
+  direction: rtl;
+  background-color: #f8faf9;
+  font-family: "El Messiri", sans-serif;
+  color: #4c837c;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: #048487;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2rem;
-  gap: 2rem;
+  gap: 3rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  text-align: right;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #accfcb;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: #048487;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.icon {
+  color: #048487;
+  font-size: 1.4rem;
 }
 
 .contact-form {
@@ -19,40 +57,46 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #accfcb;
 }
 
 .contact-form input,
 .contact-form textarea {
   padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: inherit;
+  font-size: 1rem;
 }
 
 .contact-form button {
-  background: #007bff;
+  background: #048487;
   color: white;
   border: none;
-  padding: 0.8rem;
-  border-radius: 8px;
+  padding: 0.9rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
-  background: #0056b3;
+  background: #036c6f;
 }
 
-.contact-info {
-  flex: 1;
-  min-width: 300px;
-  max-width: 400px;
-  text-align: right;
-  line-height: 1.8;
-}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.map-container {
-  margin-top: 1rem;
-  border-radius: 8px;
-  overflow: hidden;
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    max-width: 95%;
+  }
 }
